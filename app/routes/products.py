@@ -3,7 +3,7 @@ from app.schemas.product import ProductCreate, ProductResponse, ProductUpdate
 from app.crud.product import create_product, get_all_products, get_product, update_product, delete_product
 
 
-router = APIRouter(prefix="/products", tags=["Prod"])
+router = APIRouter(prefix="/products", tags=["prod"])
 
 @router.post("/", response_model=ProductResponse)
 async def create_new_product(prod: ProductCreate):

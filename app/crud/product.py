@@ -1,4 +1,4 @@
-from app.database_mongo import db
+from app.database.database_mongo import db
 from bson import ObjectId
 from datetime import datetime
 from app.schemas.product import ProductCreate, ProductUpdate
