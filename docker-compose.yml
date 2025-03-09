@@ -1,7 +1,6 @@
 services:
   fastapi:
     build: 
-      context: ./backend_web
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
@@ -12,7 +11,7 @@ services:
       - POSTGRES_URL=postgresql://postgres:postgres@postgres:5432/fastapi_db
       - MONGO_URL=mongodb://mongo:27017
     volumes:
-      - ./backend_web:/app  # Mount current directory for live changes (optional)
+      - .:/app  # Mount current directory for live changes (optional)
 
   postgres:
     image: postgres:13

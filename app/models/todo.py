@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from datetime import datetime
-from app.database_postgres import Base
+from app.database.database_postgres import Base
 
 class ToDo(Base):
     __tablename__ = "todos"

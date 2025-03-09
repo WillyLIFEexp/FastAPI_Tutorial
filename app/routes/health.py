@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text  # Import text
-from app.database_postgres import SessionLocal
-from app.database_mongo import db as mongo_db
+from app.database.database_postgres import SessionLocal
+from app.database.database_mongo import db as mongo_db
 
 router = APIRouter(prefix='/todos', tags=['database'])
 
