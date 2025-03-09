@@ -1,7 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 from app.main import app
-from app.database_postgres import SessionLocal, Base, engine
+from app.database.database_postgres import SessionLocal, Base, engine
 
 # Create a new database for testing purposes
 Base.metadata.drop_all(bind=engine)

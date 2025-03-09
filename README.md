@@ -18,8 +18,10 @@ backend_web/
 ├─ app/
 │ ├─ __init__.py          # (optional) marks this directory as a Python package
 │ ├─ main.py              # Entry point for the FastAPI application
-│ ├─ database_postgres.py # PostgreSQL connection using SQLAlchemy
-│ ├─ database_mongo.py    # MongoDB connection using Motor
+│ ├─ databases/           # All the databases for different API fun
+│ │  ├─ todo.py           
+│ │  └─ health.py        
+│ ├─ models/              # Al
 │ ├─ curd/                # All the CRUD for different API fun
 │ │  ├─ todo.py           
 │ │  └─ health.py        

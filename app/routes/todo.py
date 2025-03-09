@@ -3,9 +3,9 @@ from sqlalchemy.orm import Session
 from app.models.todo import ToDo
 from app.schemas import todo as schemas_todo
 from app.crud import todo as crud_todo
-from app.database_postgres import SessionLocal
+from app.database.database_postgres import SessionLocal
 
-router = APIRouter(prefix='/todos', tags=['todos'])
+router = APIRouter(prefix='/todos', tags=['to_dos'])
 
 def get_db():
     db = SessionLocal()
