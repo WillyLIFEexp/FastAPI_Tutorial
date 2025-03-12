@@ -14,34 +14,22 @@ This is the place to learn everything I need to know for FastAPI
 
 ## :closed_book: Project Directory Structure
 ```bash
-backend_web/
-├─ app/
-│ ├─ __init__.py          # (optional) marks this directory as a Python package
-│ ├─ main.py              # Entry point for the FastAPI application
-│ ├─ databases/           # All the databases for different API fun
-│ │  ├─ todo.py           
-│ │  └─ health.py        
-│ ├─ models/              # Al
-│ ├─ curd/                # All the CRUD for different API fun
-│ │  ├─ todo.py           
-│ │  └─ health.py        
-│ ├─ models/              # All the models for different API fun
-│ │  ├─ todo.py           
-│ │  └─ health.py         
-│ ├─ routes/              # All the API routes for different API fun
-│ │  ├─ todo.py           
-│ │  └─ health.py         
-│ ├─ schemas/             # All the schemas for different API fun
-│ │  ├─ todo.py           
-│ │  └─ health.py         
-│ ├─ tests/               # All the test cases  for different API fun
-│ │  ├─ todo.py           
-│ └─ └─ health.py         
-├─ pyproject.toml         # Poetry configuration file (includes dependencies, scripts, etc.)
-├─ poetry.lock            # Generated lock file for reproducible installs
-├─ Dockerfile             # Dockerfile for containerizing your FastAPI app
-├─ docker-compose.yml     # Docker Compose file to orchestrate FastAPI, PostgreSQL, and MongoDB
-└─ README.md              # (Optional) Project overview and setup instructions
+fastapi_project/
+│── app/              # Main application directory
+│   │── api/          # API routes (FastAPI routers)
+│   │── core/         # Core settings and security
+│   │── db/           # Database setup and interactions
+│   │── models/       # SQLAlchemy models (database schema)
+│   │── schemas/      # Pydantic schemas (request & response validation)
+│   │── services/     # Business logic layer
+│   │── dependencies/ # Dependency injection (e.g., database, auth)
+│   │── main.py       # FastAPI app entry point
+│── tests/            # Unit and integration tests
+│── .env              # Environment variables
+│── requirements.txt  # Project dependencies
+│── Dockerfile        # Docker setup for deployment
+│── README.md         # Project documentation
+
 ```
 
 ## :wrench: Setting up
