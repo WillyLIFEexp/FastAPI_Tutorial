@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.database.db_postgres import engine, Base
+from app.routes import todo_router
 
 app = FastAPI(
     title="My FastAPI Tutorial",
@@ -14,7 +15,7 @@ app = FastAPI(
 Base.metadata.create_all(bind=engine)
 
 # app.include_router(health_router)
-# app.include_router(todo_router)
+app.include_router(todo_router)
 # app.include_router(prod_router)
 # app.include_router(user_router)
 
