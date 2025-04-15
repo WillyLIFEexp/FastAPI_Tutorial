@@ -34,7 +34,7 @@ def delete_todo(db: Session, todo_id: int):
     """Delete task """
     todo_data = get_todo(db, todo_id)
 
-    db.delete()
+    db.delete(todo_data)
     db.commit()
     
 
