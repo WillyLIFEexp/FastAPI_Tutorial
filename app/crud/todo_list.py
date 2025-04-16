@@ -21,6 +21,8 @@ def create_todo(db: Session, todo: ToDoCreate):
 def update_todo(db: Session, todo_id: int, todo: ToDoUpdate):
     """Update task with new information"""
     todo_data = get_todo(db, todo_id)
+    if not todo_data:
+        return None
 
     todo_data.task_name = todo.task_name if todo.task_name else todo_data.task_name
     todo_data.description = todo.description if todo.description else todo_data.description
@@ -29,13 +31,17 @@ def update_todo(db: Session, todo_id: int, todo: ToDoUpdate):
 
     db.add(todo_data)
     db.commit()
+    return todo_data
 
 def delete_todo(db: Session, todo_id: int):
     """Delete task """
     todo_data = get_todo(db, todo_id)
+    if not todo_data:
+        return None
 
     db.delete(todo_data)
     db.commit()
+    return todo_data
     
 
 
