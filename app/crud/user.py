@@ -30,9 +30,3 @@ def create_refresh_token(user_name: str):
     to_encode = {'sub': user_name, 'exp': expire_date}
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-
-
-
-# def get_all_todos(db: Session, skip: int=0, limit: int=100):
-#     """Getting all to do tasks from database"""
-#     return db.query(NewToDo).offset(skip).limit(limit).all()

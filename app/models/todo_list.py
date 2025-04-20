@@ -12,6 +12,6 @@ class NewToDo(Base):
     task_status = Column(String, default="ToDo")
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime, default=datetime.now())
-    owner_id = Column(Integer, ForeignKey("users.id"))
+    owner_id = Column(Integer, ForeignKey("new_user.id"))
 
     owner = relationship("NewUser", back_populates="todos")
