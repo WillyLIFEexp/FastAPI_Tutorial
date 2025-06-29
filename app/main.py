@@ -1,9 +1,6 @@
 from fastapi import FastAPI
-from app.routes.health import router as health_router
-from app.routes.todo import router as todo_router
-from app.routes.products import router as prod_router
-from app.routes.r_user_api import router as user_router
-from app.database.database_postgres import engine, Base
+from app.database.init_db import init_db
+from app.api.v1.auth.routes import router as auth_router
 
 app = FastAPI(
     title="My FastAPI Tutorial",
@@ -14,13 +11,9 @@ app = FastAPI(
         "email": "nevergiveupop02@gmail.com",
     },)
 
-# Create all database tables (if they don't exist)
-Base.metadata.create_all(bind=engine)
+init_db()
 
-# app.include_router(health_router)
-# app.include_router(todo_router)
-# app.include_router(prod_router)
-app.include_router(user_router)
+app.include_router(auth_router, prefix="/api/v1/auth", tags=["auth"])
 
 @app.get('/')
 def read_root():
